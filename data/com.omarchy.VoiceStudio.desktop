@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Omarchy Voice Studio
+GenericName=Voice processor
+Comment=Your processed microphone, everywhere. PipeWire virtual mic with LV2 processing.
+Exec=omarchy-voice-studio
+Icon=com.omarchy.VoiceStudio
+Terminal=false
+Categories=Audio;AudioVideo;Recorder;
+Keywords=mic;microphone;pipewire;voice;stream;obs;discord;lv2;
+StartupWMClass=com.omarchy.VoiceStudio
+X-GNOME-UsesNotifications=false

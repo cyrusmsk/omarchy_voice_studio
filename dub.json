@@ -1,0 +1,70 @@
+{
+    "name": "omarchy-voice-studio",
+    "description": "Omarchy Voice Studio — your processed microphone, everywhere. Native GTK4 + PipeWire voice processing studio.",
+    "authors": [
+        "Sergei Giniatulin"
+    ],
+    "copyright": "Copyright © 2026, Sergei Giniatulin",
+    "license": "MIT",
+    "targetType": "executable",
+    "targetName": "omarchy-voice-studio",
+    "mainSourceFile": "src/main.d",
+    "sourcePaths": [
+        "src"
+    ],
+    "importPaths": [
+        "src"
+    ],
+    "dependencies": {
+        "gid:gtk4": "~>0.9.13",
+        "gid:adw1": "~>0.9.13",
+        "gid:gio2": "~>0.9.13",
+        "gid:glib2": "~>0.9.13"
+    },
+    "libs-posix": [
+        "pipewire-0.3",
+        "lilv-0"
+    ],
+    "sourceFiles-posix": [
+        "c_shim.o"
+    ],
+    "preBuildCommands-posix": [
+        "cc -c src/audio/c_shim.c -o c_shim.o $$(pkg-config --cflags libpipewire-0.3)"
+    ],
+    "lflags-posix": [
+        "-L/usr/lib"
+    ],
+    "dflags-posix": [
+        "-I/usr/include/pipewire-0.3",
+        "-I/usr/include/spa-0.2"
+    ],
+    "configurations": [
+        {
+            "name": "application",
+            "targetType": "executable",
+            "excludedSourceFiles": [
+                "tests/*"
+            ]
+        },
+        {
+            "name": "unittest",
+            "targetType": "executable",
+            "targetName": "omarchy-voice-studio-test",
+            "mainSourceFile": "tests/runner.d",
+            "excludedSourceFiles": [
+                "src/main.d"
+            ],
+            "sourcePaths": [
+                "src",
+                "tests"
+            ],
+            "importPaths": [
+                "src",
+                "tests"
+            ],
+            "dflags": [
+                "-unittest"
+            ]
+        }
+    ]
+}

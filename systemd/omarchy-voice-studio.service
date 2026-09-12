@@ -1,0 +1,16 @@
+[Unit]
+Description=Omarchy Voice Studio (headless virtual microphone)
+Documentation=https://github.com/omarchy/voice-studio
+After=pipewire.service pipewire-pulse.service
+Wants=pipewire.service
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/omarchy-voice-studio --headless
+Restart=on-failure
+RestartSec=3
+Environment=XDG_RUNTIME_DIR=%t
+
+[Install]
+WantedBy=default.target

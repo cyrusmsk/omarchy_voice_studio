@@ -1,0 +1,17 @@
+/* Omarchy Voice Studio — application CSS.
+ * Palette variables (@ovs_bg etc.) are injected at runtime from the active
+ * Omarchy theme (see omarchy.theme.generateCss). These rules only arrange
+ * layout/typography; colors follow the theme. */
+
+window { font-family: "Inter", "Cantarell", sans-serif; }
+
+.ovs-meter { min-height: 10px; border-radius: 6px; }
+.ovs-meter trough { min-height: 10px; border-radius: 6px; }
+.ovs-meter trough > fill { border-radius: 6px; transition: none; }
+.ovs-meter.danger trough > fill { animation: none; }
+
+.ovs-status-running { font-weight: bold; }
+
+.ovs-sidebar row { padding: 6px 10px; border-radius: 8px; }
+.ovs-chain row { padding: 8px; border-radius: 8px; }
+.ovs-keys { font-family: monospace; font-weight: bold; }

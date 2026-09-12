@@ -1,0 +1,20 @@
+# Build artifacts and local-only sources. Everything here regenerates
+# with `dub build` (+ the plugin recipes in docs/lv2-plugins.md).
+# NOTE: lv2/*.so bundles are intentionally TRACKED (shipped plugins).
+
+# DUB build outputs
+omarchy-voice-studio
+omarchy-voice-studio-test
+*.o
+*.a
+.dub/
+
+# Vendored plugin sources (re-clone + rebuild per docs/lv2-plugins.md).
+# The built bundles under lv2/ stay in version control.
+/thirdparty/
+
+# Editor / OS noise
+.vscode/
+.idea/
+*~
+.DS_Store
