@@ -49,13 +49,6 @@ Headless (for the systemd user service):
 omarchy-voice-studio --headless --profile=discord
 ```
 
-Useful diagnostics:
-
-```sh
-omarchy-voice-studio --list-lv2          # what Lilv sees (by URI)
-omarchy-voice-studio --check-plugin=URI  # ports, ranges, instantiation
-```
-
 ## Chain order and bypass
 
 Signal flows top to bottom through the Processing chain list: `↑`/`↓`
@@ -64,6 +57,48 @@ resets a plugin to its defaults. Bypassed plugins pass audio through
 unchanged. Switching profiles rebuilds the graph off the audio thread —
 if the new chain fails, the old one keeps running and you get an error
 instead of silence.
+
+## Keybinding reference
+
+`h` shows the same list in-app.
+
+| Key | Action |
+|---|---|
+| `j`/`k`, arrows | move in the focused list (scrolls to follow) |
+| `l`, `Left`/`Right` | move focus: profiles → inputs → chain |
+| `Enter` | activate |
+| `Space` | toggle bypass / selection |
+| `/` | plugin search (Add dialog) |
+| `n` / `d` | new profile / delete selected profile |
+| `a` / `x` | add / remove plugin |
+| `J` / `K` | move plugin down / up |
+| `b` | bypass plugin |
+| `r` | reset plugin controls to defaults |
+| `i` | plugin info (name, vendor, URI, port count) |
+| `s` | settings (style, autostart, backend status) |
+| `t` | cycle style |
+| `Ctrl+S` / `Ctrl+Shift+S` | save / save as |
+| `Esc` / `q` | close dialog |
+
+Text fields always keep native GTK editing. In the Add dialog: `j`/`k`
+move, `Return` adds, `Esc`/`q` closes.
+
+## Style
+
+System style is the default (untouched Adwaita, follows `prefer-dark`).
+Press `t` (or pick in settings) to cycle: system → omarchy → dark →
+light. Omarchy mode overlays the live palette from
+`~/.local/state/omarchy/current` (theme.name + colors.toml) and reloads
+on theme switch without restart. Choice persists in config.json.
+
+## Diagnostics (CLI)
+
+```sh
+omarchy-voice-studio --list-lv2              # what Lilv sees (by URI)
+omarchy-voice-studio --check-plugin=URI      # ports, ranges, instantiation
+omarchy-voice-studio --list-sources          # PipeWire capture devices
+omarchy-voice-studio --dump-chain=PROFILE_ID # engine's chain display model
+```
 
 ## Meters
 
