@@ -30,3 +30,9 @@ dub run   --compiler=ldc2 -- --headless      # service mode
   the vendored `lv2/` bundles
 - [docs/architecture.md](docs/architecture.md) — code layout, PipeWire
   design, real-time rules
+
+## License
+
+MIT — see [LICENSE](LICENSE). 
+
+[gid](https://github.com/Kymorphia/gid) is MIT GObject Introspection D Package Repository by elementgreen;
