@@ -20,6 +20,12 @@ dub run   --compiler=ldc2                    # GUI
 dub run   --compiler=ldc2 -- --headless      # service mode
 ```
 
+## Disclaimer
+This project uses AI-generated content and/or AI-assisted functionality.
+AI outputs may be inaccurate, incomplete, or inappropriate. 
+Use this project at your own risk and verify important results independently. 
+The authors are not responsible for any consequences arising from the use of AI-generated outputs.
+
 ## Documentation
 
 - [docs/usage.md](docs/usage.md) — presets, daily use, keybindings,
