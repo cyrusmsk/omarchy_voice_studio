@@ -1,6 +1,6 @@
 [Unit]
 Description=Omarchy Voice Studio (headless virtual microphone)
-Documentation=https://github.com/omarchy/voice-studio
+Documentation=https://github.com/cyrusmsk/omarchy_voice_studio
 After=pipewire.service pipewire-pulse.service
 Wants=pipewire.service
 PartOf=graphical-session.target
